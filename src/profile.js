@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { View, TitleBar } from 'react-desktop/macOs';
+import { TitleBar } from 'react-desktop/macOs';
 import { Intro } from './components/Intro';
+import { Projects } from "./components/Projects";
 
 class Profile extends Component {
   constructor() {
@@ -21,6 +22,7 @@ class Profile extends Component {
           onResizeClick={() => this.setState({ isFullscreen: !this.state.isFullscreen })}
         />
         <Intro />
+        <Projects />
       </div>
     );
   }

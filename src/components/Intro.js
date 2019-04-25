@@ -12,8 +12,9 @@ export class Intro extends Component {
     return (
       <SegmentedControl
         box
-        margin="30px"
+        margin="40px"
         width="40%"
+        style={{float: 'left'}}
       >
         {this.renderItems()}
       </SegmentedControl>
@@ -25,7 +26,7 @@ export class Intro extends Component {
       this.renderItem(1, 'About me', <Text>{dataFile.Intro.About}</Text>),
       this.renderItem(2, 'School', <Text>{dataFile.Intro.School}</Text>),
       this.renderItem(3, 'Interests', <div><Text>{dataFile.Intro.Interest1}</Text>
-                                      <Text>{dataFile.Intro.Interest2}</Text></div>)
+        <Text>{dataFile.Intro.Interest2}</Text></div>)
     ];
   }
 
