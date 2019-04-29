@@ -16,8 +16,7 @@ export class Projects extends Component {
     super();
     this.state = {
       selected: null,
-      projectName: [],
-      projectDescription: []
+      projectInfo: []
     };
   }
 
@@ -40,17 +39,15 @@ export class Projects extends Component {
       const json = await response.json();
       console.log('repo response: ', json);
 
-      let Name = [];
-      let Description = [];
+      let info = [];
       
       for (var repo of json) {
-        Name.push(repo.name);
-        Description.push(repo.description);
+        info.push(repo.name);
+        info.push(repo.description);
       }
 
       this.setState({
-        projectName: Name,
-        projectDescription: Description
+        projectInfo: info
       })
 
     } catch (err) {
@@ -68,18 +65,25 @@ export class Projects extends Component {
         width="50%"
         style={{margin: '30px'}}
       >
-      <TitleBar title="Github Projects" controls />
+      <TitleBar title="Github" controls />
       <ListView background="#f1f2f4" width="240" height="500px">
         <ListViewHeader>
           <Text size="11" color="#696969">Order by name</Text>
         </ListViewHeader>
-        <ListViewSection header={this.renderSectionHeader('My Section')}>
-          {this.state.projectName.map((prop, key) => {
-            return this.renderItem(key, prop)
+        <ListViewSection header={this.renderSectionHeader('Projects')}>
+          {this.state.projectInfo.map((prop, key) => {
+            if (key%2 == 0) {
+              return this.renderItem(key, prop)
+            } else {
+              return this.renderDescription(key, prop)
+            }
           })}
+          {/* {this.state.projectDescription.map((prop, key) => {
+            return this.renderDescription(key, prop)
+          })} */}
         </ListViewSection>
         <ListViewFooter>
-          <Text size="11" color="#696969">Status</Text>
+          <Text size="11" color="#696969">github.com/stanliest</Text>
         </ListViewFooter>
       </ListView>
     </Window>
@@ -108,6 +112,17 @@ export class Projects extends Component {
     17,6.7 "/>
         </svg>
         <Text color="#414141" size="13">{info}</Text>
+      </ListViewRow>
+    );
+  }
+
+  renderDescription(title, info) {
+    return (
+      <ListViewRow
+        onClick={() => this.setState({ selected: title })}
+        background={this.state.selected === title ? '#d8dadc' : null}
+      >
+        <Text size="11" color="#696969">{info}</Text>
       </ListViewRow>
     );
   }
