@@ -9,10 +9,11 @@ export class SocialMedia extends Component {
   render() {
     return (
       <Window
+        chrome
         height="120px"
         padding="20px"
-        width="40%"
-        style={{ margin: '30px', position: 'absolute', top: '170px', left: '10px' }}
+        width="90%"
+        style={{ margin: "auto", marginTop: "40px" }}
       >
         <TitleBar title="Social Media" controls />
 

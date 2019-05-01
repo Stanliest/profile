@@ -5,10 +5,6 @@ import { Projects } from "./components/Projects";
 import { SocialMedia } from "./components/SocialMedia";
 
 class Profile extends Component {
-  constructor() {
-    super();
-    this.state = { isFullscreen: false };
-  }
 
   render() {
     return (
@@ -16,11 +12,6 @@ class Profile extends Component {
         <TitleBar
           title="My Profile"
           controls
-          isFullscreen={this.state.isFullscreen}
-          onCloseClick={() => console.log('Close window')}
-          onMinimizeClick={() => console.log('Minimize window')}
-          onMaximizeClick={() => console.log('Mazimize window')}
-          onResizeClick={() => this.setState({ isFullscreen: !this.state.isFullscreen })}
         />
         <Intro />
         <Projects />
