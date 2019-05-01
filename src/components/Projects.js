@@ -8,7 +8,8 @@ import {
   ListViewRow,
   Text,
   Window,
-  TitleBar
+  TitleBar,
+  Link
 } from 'react-desktop/macOs';
 
 export class Projects extends Component {
@@ -58,8 +59,7 @@ export class Projects extends Component {
 
   render() {
     return (
-      <Window 
-        chrome
+      <Window
         height="550px"
         padding="10px"
         width="50%"
@@ -72,21 +72,18 @@ export class Projects extends Component {
         </ListViewHeader>
         <ListViewSection header={this.renderSectionHeader('Projects')}>
           {this.state.projectInfo.map((prop, key) => {
-            if (key%2 == 0) {
+            if (key%2 === 0) {
               return this.renderItem(key, prop)
             } else {
               return this.renderDescription(key, prop)
             }
           })}
-          {/* {this.state.projectDescription.map((prop, key) => {
-            return this.renderDescription(key, prop)
-          })} */}
         </ListViewSection>
         <ListViewFooter>
-          <Text size="11" color="#696969">github.com/stanliest</Text>
+          <Link href='https://github.com/stanliest' target="_blank" rel="noopener">github.com/stanliest</Link>
         </ListViewFooter>
-      </ListView>
-    </Window>
+        </ListView>
+      </Window>
 
     );
   }
