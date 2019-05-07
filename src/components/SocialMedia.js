@@ -13,7 +13,7 @@ export class SocialMedia extends Component {
         height="120px"
         padding="20px"
         width="90%"
-        style={{ margin: "auto", marginTop: "40px" }}
+        style={{ margin: "auto", marginTop: "40px", marginBottom: "40px" }}
       >
         <TitleBar title="Social Media" controls />
 
