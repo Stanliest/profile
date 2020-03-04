@@ -1,6 +1,7 @@
 {
   "name": "my-website",
   "version": "0.0.0",
+  "homepage": "https://stanliest.github.io/profile/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
