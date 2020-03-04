@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
+  "version": 1, 
   "newProjectRoot": "projects",
   "projects": {
     "my-website": {
@@ -121,16 +121,8 @@
               "devServerTarget": "my-website:serve:production"
             }
           }
-        },
-        "deploy": {
-          "builder": "angular-cli-ghpages:deploy",
-          "options": {}
         }
       }
-    }
-  },
-  "defaultProject": "my-website",
-  "cli": {
-    "analytics": false
-  }
+    }},
+  "defaultProject": "my-website"
 }
