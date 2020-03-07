@@ -8,14 +8,11 @@ span {
 }
 
 .card-container {
-  position: relative;
-  float: left;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   margin-left: 50px;
-  // align-items: center;
 }
 
 .card {

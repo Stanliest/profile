@@ -1,10 +1,12 @@
 .intro {
+  display: flex;
+  flex-direction: column;
   font-family: 'Gloria Hallelujah';
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.6);
   width: 80%;
   padding: 20px;
-  margin-left: 50px;
+  margin: 0px auto;
 }
 
 .intro p {  
