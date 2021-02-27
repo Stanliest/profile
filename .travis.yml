@@ -1,0 +1,22 @@
+language: node_js
+node_js: 
+  - 10.22.1
+cache: yarn
+
+install:
+  - yarn install
+
+script:
+  - yarn build
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  on:
+    branch: angularjs
+
+branches:
+  only:
+    - gh-pages
+    - /.*/
